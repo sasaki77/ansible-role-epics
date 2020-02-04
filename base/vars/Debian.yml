@@ -1,0 +1,9 @@
+---
+required_packages:
+  - git
+  - gcc
+  - build-essential 
+  - make
+  - perl
+  - wget
+  - libreadline6-dev

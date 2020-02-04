@@ -1,0 +1,40 @@
+- name: main / Make module dir
+  file:
+    path: "{{ epics_base_modules_name }}/soft/asyn"
+    state: directory
+    owner: "{{ epics_base_owner }}"
+    group: "{{ epics_base_group }}"
+    mode: 0755
+
+- name: main / Chack module exists
+  stat: path={{ epics_base_modules_name }}/soft/asyn/{{ epics_asyn_ver }}
+  register: module_exists
+
+- block:
+  - name: main / Download module src
+    unarchive:
+      src: "{{ epics_asyn_url }}"
+      dest: "{{ epics_base_modules_name }}/soft/asyn"
+      owner: "{{ epics_base_owner }}"
+      group: "{{ epics_base_group }}"
+      remote_src: True
+
+  - name: main / Move module
+    command: "mv {{ epics_base_modules_name }}/soft/asyn/{{ epics_asyn_unarchived_name }} {{ epics_base_modules_name }}/soft/asyn/{{ epics_asyn_ver }}"
+  when: not module_exists.stat.exists
+
+- name: main / Copy RELEASE.local file
+  template:
+    src: "RELEASE.j2"
+    dest: "{{ epics_base_modules_name }}/soft/asyn/{{ epics_asyn_ver }}/configure/RELEASE.local"
+    owner: "{{ epics_base_owner }}"
+    group: "{{ epics_base_group }}"
+    mode: 0664
+
+- name: main / Make epics module
+  make:
+    chdir: "{{ epics_base_modules_name }}/soft/asyn/{{ epics_asyn_ver }}"
+  environment:
+    EPICS_HOST_ARCH: "{{ epics_base_epics_host_arch }}"
+  become: true
+  become_user: "{{ epics_base_owner }}"

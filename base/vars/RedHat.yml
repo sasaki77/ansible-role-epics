@@ -1,0 +1,12 @@
+---
+required_packages:
+  - git
+  - gcc
+  - gcc-c++
+  - make
+  - perl
+  - perl-devel
+  - perl-Pod-Checker
+  - wget
+  - readline
+  - readline-devel

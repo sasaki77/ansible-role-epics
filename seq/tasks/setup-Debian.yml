@@ -1,0 +1,2 @@
+- name: Install packages from apt
+  apt: pkg=re2c state=present

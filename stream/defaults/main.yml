@@ -1,0 +1,3 @@
+epics_stream_ver: "2_8_10"
+epics_stream_url: "https://github.com/paulscherrerinstitute/StreamDevice/archive/2.8.10.tar.gz"
+epics_stream_unarchived_name: "StreamDevice-2.8.10"

@@ -1,0 +1,3 @@
+epics_seq_ver: "2.2.7"
+epics_seq_url: "http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.7.tar.gz"
+epics_seq_unarchived_name: "seq-2.2.7"

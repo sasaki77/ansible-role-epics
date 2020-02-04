@@ -1,0 +1,3 @@
+epics_asyn_ver: "4-38"
+epics_asyn_url: "https://github.com/epics-modules/asyn/archive/R4-38.tar.gz"
+epics_asyn_unarchived_name: "asyn-R4-38"

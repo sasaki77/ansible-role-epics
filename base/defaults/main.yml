@@ -1,0 +1,14 @@
+epics_base_owner: "epics"
+epics_base_group: "epics"
+
+epics_base_epics_host_arch: linux-x86_64
+
+epics_base_base_url: "https://epics.anl.gov/download/base/base-3.15.7.tar.gz"
+epics_base_extensions_top_url: "https://epics.anl.gov/epics/download/extensions/extensionsTop_20120904.tar.gz"
+
+epics_base_base_unarchived_name: "base-3.15.7"
+epics_base_epics_directory: "/opt/epics/R315"
+
+epics_base_base_name: "{{ epics_base_epics_directory }}/base"
+epics_base_extensions_name: "{{ epics_base_epics_directory }}/extensions"
+epics_base_modules_name: "{{ epics_base_epics_directory }}/modules"

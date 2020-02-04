@@ -1,0 +1,2 @@
+epics_gateway_url: "https://github.com/epics-extensions/ca-gateway/archive/v2.1.2.tar.gz"
+epics_gateway_unarchived_name: "ca-gateway-2.1.2"
